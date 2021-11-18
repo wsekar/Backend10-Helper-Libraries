@@ -9,7 +9,7 @@ class Home extends CI_Controller
 
 	public function index()
 	{
-		// load view admin/overview.php
+		// load view admin/home.php
 		$this->load->view("admin/home");
 	}
 }

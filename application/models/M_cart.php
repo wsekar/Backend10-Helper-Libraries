@@ -32,23 +32,4 @@ class M_cart extends CI_Model
 		$this->db->where('id_produk', $id);
 		return $this->db->get();
 	}
-
-	public function tambah_pelanggan($data)
-	{
-		$this->db->insert('tb_pelanggan', $data);
-		$id = $this->db->insert_id();
-		return (isset($id)) ? $id : FALSE;
-	}
-
-	public function tambah_order($data)
-	{
-		$this->db->insert('tb_order', $data);
-		$id = $this->db->insert_id();
-		return (isset($id)) ? $id : FALSE;
-	}
-
-	public function tambah_detail_order($data)
-	{
-		$this->db->insert('tb_detail_order', $data);
-	}
 }
