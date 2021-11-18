@@ -1,21 +1,9 @@
 <?php
-function formatHariTanggal($waktu)
+function formatHariTanggal($waktu) //Variable $waktu merupakan parameter untuk menyimpan data dari form inputan tanggal.
 {
-    // $hari_array = [
-    //     'Minggu',
-    //     'Senin',
-    //     'Selasa',
-    //     'Rabu',
-    //     'Kamis',
-    //     'Jumat',
-    //     'Sabtu'
-    // ];
+    $tanggal = date('j', strtotime($waktu));//inisialisasi untuk tanggal dengan variable $tanggal
 
-    // $hr = date('w', strtotime($waktu));
-    // $hari = $hari_array[$hr];
-
-    $tanggal = date('j', strtotime($waktu));
-
+	//menampung nama-nama bulan dengan urutan dari nomor 1-12
     $nama_bulan = [
         1 => 'Januari',
         2 => 'February',
@@ -30,10 +18,11 @@ function formatHariTanggal($waktu)
         11 => 'November',
         12 => 'Desember',
     ];
-
+	
     $bl = date('n', strtotime($waktu));
-    $bulan = $nama_bulan[$bl];
-    $tahun = date('Y', strtotime($waktu));
+    $bulan = $nama_bulan[$bl]; //mendefinisikan bulan
+    $tahun = date('Y', strtotime($waktu)); //mendefinisikan tahun
 
+	//mengembalikkan value dari masing-masing variable yang sudah didefinisikan tadi dengan urutan tanggal, bulan, dan tahun
     return "$tanggal $bulan $tahun";
 }
